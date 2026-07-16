@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+    <script src="https://kit.fontawesome.com/394d725530.js" crossorigin="anonymous"></script>
+    <title>실시간예약</title>
+</head>
+<body>
+    <page-header></page-header>
+    <page-banner 
+        title="RESERVATION" subtitle="실시간예약"
+        bg="/img/reservation2.jpg">
+    </page-banner>
+    <main class="reservation-content">
+        <p class="room-select-title">객실 선택</p>
+        <div class="room-list">
+            <div class="room-card" style="background-image: url('/img/standard.jpg')">
+                <div class="room-card-overlay">
+                    <div class="room-card-inner">
+                        <span class="room-card-name">STANDARD</span>
+                        <svg class="room-arrow" width="210" height="40" viewBox="0 0 210 40">
+                            <line x1="180" y1="1" x2="200" y2="20"/>
+                            <line id="transparent_line" x1="180" y1="39" x2="200" y2="20"/>
+                            <line x1="40" y1="20" x2="200" y2="20"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="room-card" style="background-image: url('/img/deluxe.jpg')">
+                <div class="room-card-overlay">
+                    <div class="room-card-inner">
+                        <span class="room-card-name">DELUXE</span>
+                        <svg class="room-arrow" width="210" height="40" viewBox="0 0 210 40">
+                            <line x1="180" y1="1" x2="200" y2="20"/>
+                            <line id="transparent_line" x1="180" y1="39" x2="200" y2="20"/>
+                            <line x1="40" y1="20" x2="200" y2="20"/>
+                        </svg>                    
+                    </div>
+                </div>
+            </div>
+            <div class="room-card" style="background-image: url('/img/premium.jpg')">
+                <div class="room-card-overlay">
+                    <div class="room-card-inner">
+                        <span class="room-card-name">PREMIUM</span>
+                        <svg class="room-arrow" width="210" height="40" viewBox="0 0 210 40">
+                            <line x1="180" y1="1" x2="200" y2="20"/>
+                            <line id="transparent_line" x1="180" y1="39" x2="200" y2="20"/>
+                            <line x1="40" y1="20" x2="200" y2="20"/>
+                        </svg>                    
+                    </div>
+
+                </div>
+            </div>
+            <div class="room-card" style="background-image: url('/img/sweet.jpg')">
+                <div class="room-card-overlay">
+                    <div class="room-card-inner">
+                        <span class="room-card-name">SWEET</span>
+                        <svg class="room-arrow" width="210" height="40" viewBox="0 0 210 40">
+                            <line x1="180" y1="1" x2="200" y2="20"/>
+                            <line id="transparent_line" x1="180" y1="39" x2="200" y2="20"/>
+                            <line x1="40" y1="20" x2="200" y2="20"/>
+                        </svg>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reservation-guide-wrap">
+            <cancellation-policy></cancellation-policy>
+        </div>
+    </main>
+    <top-button></top-button>
+    <page-footer></page-footer>
+    <script src="../js/common.js"></script>
+    <script src="../js/reservation2.js"></script>
+</body>
+</html>

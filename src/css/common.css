@@ -1,0 +1,424 @@
+/* 헤더 */
+header {
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    padding: 45px 522px 35px 522px;
+    gap: 40px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 240px;
+    border-bottom: 1px solid #D8D8D8;
+    background-color: #FFFFFF;
+}
+
+.title a {
+    font-family: 'KOROADB';
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    font-weight: 700;
+    font-size: 80px;
+    color: #000000;
+    text-decoration: none;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+    list-style: none;
+}
+
+nav > ul > li {
+    position: relative;
+}
+
+nav > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 44px 16px 20px;
+    list-style: none;
+    font-family: 'KOROADL';
+    background-color: #ffffff;
+    width: max-content;
+    white-space: nowrap;
+}
+
+nav > ul > li:hover > ul {
+    display: flex;
+}
+
+nav > ul > li > a {
+    padding: 8px;
+    color: #000000;
+    text-decoration: none;
+}
+
+nav > ul > li > ul.sub a {
+    font-family: 'KOROADL';
+    color: #000000;
+    text-decoration: none;
+}
+
+nav > ul > li > ul.sub a:hover {
+    font-family: 'KOROADL';
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+/* 푸터 */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 350px;
+    color: #ffffff;
+    background-color: #1D1D1D;
+}
+
+.footer_title {
+    display: flex;
+    align-items: center;
+}
+
+.footer_title h1 {
+    display: flex;
+    margin: 0;
+    padding-top: 36px;
+    font-size: 80px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.footer_sns {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-top: 36px;
+    gap: 24px;
+}
+
+.sns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    font-size: 30px;
+    width: 30px;
+    border: 0px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.2s;
+}
+
+.sns:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer_address p {
+    display: flex;
+    margin-top: 25px;
+    font-family: 'KOROADL';
+    font-size: 13px;
+}
+
+.footer_phone {
+    display: flex;
+    margin-top: -5px;
+    gap: 20px;
+}
+.footer_phone span {
+    font-family: 'KOROADL';
+    font-size: 13px;
+}
+
+/* 540px 이하에서는 사업자등록번호/전화/팩스를 세로로 쌓고 가운데 정렬 */
+@media (max-width: 540px) {
+    .footer_phone {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+    }
+}
+
+.ftrBtn {
+    font-family: 'KOROADL';
+    margin-top: 20px;
+    border: 0px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.2s;
+}
+
+.ftrBtn:hover {
+    color: rgba(255, 255, 255, 0.5);   
+}
+
+.footer_copyright p {
+    font-family: 'KOROADL';
+    font-size: 13px;   
+    color: white;
+}
+
+/* 버튼 */
+.topBtn {
+    z-index: 100;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    background-color: #255F38;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.topBtn:hover {
+    opacity: 0.8;
+}
+
+/* 배너 */
+.page-banner {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    gap: 10px;
+}
+
+.page-banner::before {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.page-banner-text {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.page-banner-text h2 {
+    font-family: 'KOROADB';
+    font-size: 50px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.page-banner-text p {
+    font-family: 'KOROADL';
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 12px;
+}
+
+/* 경고, 알림 모달 */
+.alert-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-overlay.active {
+    display: flex;
+}
+
+.alert-modal {
+    width: 420px;
+    height: 178px;
+    padding: 50px 123px 30px 123px;
+    gap: 30px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alert-text {
+    font-family: 'KOROADL';
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    color: #000000;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.alert-btn {
+    width: 74px;
+    height: 44px;
+    padding: 15px 25px;
+    background-color: #1D1D1D;
+    border: none;
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
+
+.alert-btn:hover {
+    background-color: #818181;
+}
+
+/* 반응형 */
+@media (max-width: 1000px) {
+    body {
+        padding-top: 90px !important;
+        overflow-x: hidden;
+    }
+
+    .page-banner {
+        margin-top: 15px;
+        height: 200px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        height: auto;
+        padding: 16px 0 0;
+        gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        position: fixed;
+        left: 0;
+        transform: none;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title a {
+        font-size: 32px;
+    }
+
+    .navbar {
+        display: block;
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        padding: 0;
+        z-index: 100;
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    nav > ul.menu {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        gap: 0;
+        margin: 0;
+        padding: 0 16px;
+        border-top: 1px solid #D8D8D8;
+        box-sizing: border-box;
+    }
+
+    nav > ul.menu > li {
+        flex: 0 0 auto;
+        position: static;
+        text-align: center;
+    }
+
+    nav > ul.menu > li > a {
+        display: block;
+        padding: 14px 0;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    /* 서브메뉴: 버튼 위치와 무관하게 헤더 바로 아래, 화면 좌우 끝까지 */
+    nav > ul.menu > li > ul.sub {
+        display: none;
+        position: fixed;
+        top: 90px;
+        left: 0;
+        right: 0;
+        width: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 16px 24px;
+        padding: 10px 16px;
+        margin: 20px 0 0 0;
+        border-top: 1px solid #D8D8D8;
+        background-color: #ffffff;
+        white-space: normal;
+        box-sizing: border-box;
+        z-index: 99;
+    }
+
+    nav > ul.menu > li.open > ul.sub {
+        display: flex;
+    }
+
+    nav > ul.menu > li > ul.sub li {
+        padding: 0;
+    }
+
+    nav > ul.menu > li > ul.sub a {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+}

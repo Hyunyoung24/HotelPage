@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+    <script src="https://kit.fontawesome.com/394d725530.js" crossorigin="anonymous"></script>
+    <title>예약 등록</title>
+</head>
+<body>
+    <page-header></page-header>
+    <top-button></top-button>
+    <page-banner
+        title="RESERVATION" subtitle="실시간예약"
+        bg="/img/reservation2.jpg">
+    </page-banner>
+    <main class="room-detail">
+        <h2 class="room-detail-title">예약 등록</h2>
+        <div class="room-detail-content">
+            <div class="room-detail-left res5-form">
+                <div class="res5-row">
+                    <span class="res5-label">ROOM</span>
+                    <div class="res5-readonly" id="roomName"></div>
+                </div>
+                <div class="res5-row">
+                    <span class="res5-label">추가인원</span>
+                    <div class="res5-readonly" id="guestCount"></div>
+                </div>
+                <div class="res5-row">
+                    <span class="res5-label">예약명</span>
+                    <div class="res5-input-wrap">
+                        <input class="res5-input" id="customerName"
+                            type="text" placeholder="예약명을 입력해 주세요.">
+                    </div>
+                </div>
+                <div class="res5-row">
+                    <span class="res5-label">전화번호</span>
+                    <div class="res5-input-wrap">
+                        <input class="res5-input" id="phoneNumber"
+                            type="text" placeholder="-를 제외하고 입력해 주세요.">
+                    </div>
+                </div>
+                <div class="res5-row res5-total">
+                    <span class="res5-label">총 합계</span>
+                    <div class="total-right">
+                        <span class="info-total" id="totalPrice"></span>
+                        <span class="total-unit">원</span>
+                    </div>
+                </div>
+            </div>
+            <div class="room-detail-right">
+                <reservation-calendar readonly id="calendar"></reservation-calendar>
+            </div>
+        </div>
+        <div class="res5-buttons">
+            <button class="btn-cancel" id="cancelBtn">취소</button>
+            <button class="btn-reserve confirm" id="reserveBtn">예약하기</button>
+        </div>
+    </main>
+    <alert-modal id="alertModal"></alert-modal>
+    <page-footer></page-footer>
+    <script src="../js/common.js"></script>
+    <script src="../js/calendar.js"></script>
+    <script src="../js/reservation5.js"></script>
+</body>
+</html>

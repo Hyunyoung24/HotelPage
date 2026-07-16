@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+    <script src="https://kit.fontawesome.com/394d725530.js" crossorigin="anonymous"></script>
+    <title>객실 상세</title>
+</head>
+<body>
+    <page-header></page-header>
+    <top-button></top-button>
+    <page-banner 
+        title="RESERVATION" subtitle="실시간예약"
+        bg="/img/reservation2.jpg">
+    </page-banner>
+    <alert-modal id="alertModal"></alert-modal>
+    <main class="room-detail">
+        <h2 class="room-detail-title" id="roomTitle"></h2>
+        <div class="room-detail-content">
+            <div class="room-detail-left">
+                <div class="room-main-img-wrap">
+                    <div class="room-img-slider" id="roomImgSlider"></div>
+                </div>
+                <div class="room-thumb-list" id="roomThumbList"></div>
+                <p class="room-desc" id="roomDesc"></p>
+                <p class="room-desc-eng" id="roomDescEng"></p>
+            </div>
+            <div class="room-detail-right">
+                <reservation-calendar id="calendar"></reservation-calendar>
+                <div class="reservation-info">
+                    <div class="info-row">
+                        <span class="info-label">추가 인원</span>
+                        <div class="custom-select" id="extraGuestWrap">
+                            <div class="custom-select-selected" id="extraGuestSelected">없음</div>
+                            <ul class="custom-select-options" id="extraGuestOptions">
+                                <li data-value="0">없음</li>
+                                <li data-value="1">1명</li>
+                                <li data-value="2">2명</li>
+                            </ul>
+                        </div>
+                        <span class="info-desc">기준 인원 2명, 추가 시 한 명당 객실 가격의 20%</span>
+                    </div>
+                    <div class="info-row total">
+                        <span class="info-label">총 합계</span>
+                        <div class="total-right">
+                            <span class="info-total" id="totalPrice">0</span>
+                            <span class="total-unit">원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-buttons">
+                    <button class="btn-cancel" onclick="history.back()">취소</button>
+                    <button class="btn-reserve inactive" id="reserveBtn">예약하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <page-footer></page-footer>
+    <script src="../js/common.js"></script>
+    <script src="../js/calendar.js"></script>
+    <script src="../js/roomImgSlider.js"></script>
+    <script src="../js/reservation3.js"></script>
+</body>
+</html>

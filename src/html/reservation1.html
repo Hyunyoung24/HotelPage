@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+    <script src="https://kit.fontawesome.com/394d725530.js" crossorigin="anonymous"></script>
+    <title>예약안내</title>
+</head>
+<body>
+    <page-header></page-header>
+    <page-banner 
+        title="RESERVATION" subtitle="예약안내"
+        bg="/img/reservation1.jpg">
+    </page-banner>
+    <div class="reservation-content">
+        <p class="room-select-title">예약 안내</p>
+    </div>
+    <main>
+        <div class="reservation-guide-wrap">
+            <div class="table-wrap">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">객실</th>
+                            <th rowspan="2">면적</th>
+                            <th rowspan="2">인원<br>(기준/최대)</th>
+                            <th colspan="3">비수기<br>(10.01–06.30)</th>
+                            <th colspan="3">성수기<br>(07.01–09.30)</th>
+                        </tr>
+                        <tr class="sub-head">
+                            <th>주중</th><th>주말</th><th>휴일</th>
+                            <th>주중</th><th>주말</th><th>휴일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-wrap">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td class="box1">
+                                <h4>숙박 조건</h4>
+                                디럭스 &amp; 스위트 : 성인2 + 아동2 (만12세이하까지만 해당)<br>
+                                스위트 : 성인4 + 아동2 (만12세이하까지만 해당)
+                            </td>
+                            <td class="box2">
+                                <h4>식사 제공</h4>
+                                디럭스 &amp; 스위트 (성인 2명 제공), 스위트 (성인 4명 제공)<br>
+                                12세미만 아동 2명 차일드 메뉴 무료 제공<br>
+                                3박 예약시 : 조식 3회, 중석식 4회<br>
+                                4박 예약시 : 조식 4회, 중석식 6회
+                            </td>                           
+                            <td class="box3">
+                                <h4>세부 사항</h4>
+                                키즈 카페 쿠폰 제공 (아동 2명까지 가능, 2시간 제한)<br>
+                                키즈 클럽 무료 이용 (아동 2명까지 가능, 숙박 기간동안 무제한 이용)<br>
+                                라운지 쿠폰 제공 (맥주 or 쉐이크 or 망고빙수 중 택1)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </div>
+            <cancellation-policy></cancellation-policy>
+        </div>
+    </main>
+    <top-button></top-button>
+    <page-footer></page-footer>
+    <script src="../js/common.js"></script>
+    <script src="../js/reservation1.js"></script>
+</body>
+</html>

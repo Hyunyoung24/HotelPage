@@ -1,0 +1,1152 @@
+@font-face {
+    font-family: 'KOROADB';
+    src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Koroad/KOROADB.woff2') format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'KOROADM';
+    src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Koroad/KOROADM.woff2') format('woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'KOROADL';
+    src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Koroad/KOROADL.woff2') format('woff2');
+    font-weight: 300;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'KOROADM';
+    margin: 0;
+    padding-top: 240px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* 예약 메인 콘텐츠 */
+.reservation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    gap: 30px;
+    background-color: #FFFFFF;
+}
+
+/* 예약안내 페이지 래퍼 */
+.reservation-guide-wrap {
+    display: block;
+    width: 100%;
+    max-width: 1316px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.table-wrap {
+    width: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.table-wrap:last-of-type {
+    border-radius: 0 0 2px 2px;
+    overflow: hidden;
+}
+
+/* 표 1 : 가격 표 — info-table처럼 1316px 밑에서도 잘리지 않고
+   컨테이너 폭에 맞춰 동적으로(칼럼이 같이) 줄어듦.
+   실제 모바일 반응형(1000px 이하)에서만 스크롤 방식으로 전환됨(아래 미디어쿼리) */
+table.price-table {
+    font-family: 'KOROADL';
+    font-weight: 300;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed;
+    border: 1px solid #D8D8D8;
+}
+
+table.price-table th,
+table.price-table td {
+    font-family: 'KOROADL';
+    font-weight: 300;
+    border: 1px solid #D8D8D8;
+    text-align: center;
+    padding: 24px 8px;
+}
+
+table.price-table thead th {
+    background: #D8D8D8;
+    transition: background-color .15s ease;
+}
+
+table.price-table tbody tr {
+    cursor: default;
+    transition: background-color .15s ease;
+}
+
+table.price-table tbody td,
+table.price-table tbody th {
+    padding: 16px 8px;
+}
+
+table.price-table tbody tr:hover td,
+table.price-table tbody tr:hover th {
+    background-color: #D8D8D8;
+}
+
+table.price-table tbody th {
+    background: #fff;
+    transition: background-color .15s ease;
+}
+
+/* 표 2 : 안내 / 환불규정 */
+table.info-table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    margin-top: 60px;
+    table-layout: fixed;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table.info-table td {
+    font-family: 'KOROADM';
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    vertical-align: top;
+    padding: 54px 24px;
+}
+
+table.info-table td.box1 { background: #EFEFEF; }
+
+table.info-table td.box2 { background: #E4E4E4; }
+
+table.info-table td.box3 { background: #C7C7C7; }
+
+table.info-table td h4 {
+    font-family: 'KOROADL';
+    font-weight: 300;
+    margin: 0 0 22px;
+    font-size: 25px;
+    color: #222222;
+    text-align: center;
+}
+
+table.info-table tbody tr:first-child td:first-child {
+    border-top-left-radius: 2px;
+}
+
+table.info-table tbody tr:first-child td:last-child {
+    border-top-right-radius: 2px;
+}
+
+.refund-title {
+    background: #D8D8D8;
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+.refund-body {
+    padding: 16px 24px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #555555;
+}
+
+/* 객실 선택 텍스트 */
+.room-select-title {
+    font-family: 'KOROADL';
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+    color: #000000;
+}
+
+/* 방 목록 */
+.room-list {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    width: 1316px;
+}
+
+/* 방 카드 */
+.room-card {
+    width: 100%;
+    aspect-ratio: 1316 / 266;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    container-type: inline-size;
+}
+
+.room-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.room-card-overlay:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.room-card-inner {
+    display: flex;
+    align-items: center;
+}
+
+.room-card:hover .room-card-inner {
+    transform: scale(1.05);
+}
+
+.room-card-name {
+    font-family: 'KOROADB';
+    font-size: clamp(20px, 4.56cqw, 60px);
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.room-arrow {
+    overflow: visible;
+    width: clamp(70px, 15.96cqw, 210px);
+    height: auto;
+    margin-left: clamp(-10px, -0.76cqw, -3px);
+}
+
+.room-arrow line {
+    stroke: white;
+    stroke-width: 3.9;
+    stroke-linecap: round;
+}
+
+.room-arrow #transparent_line {
+    stroke: none;
+}
+
+/* 취소 및 환불 규정 */
+.cancellation-policy {
+    margin-top: 30px;
+    width: 1316px;
+    display: flex;
+    flex-direction: column;
+    border: 0.7px solid #D8D8D8;
+    border-radius: 2px;
+}
+
+.policy-title {
+    font-family: 'KOROADL';
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 16px 20px;
+    color: #000000;
+    background-color: #D8D8D8;
+}
+
+.policy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 20px;
+    background-color: #FFFFFF;
+}
+
+.policy-content p {
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 0.9;
+    margin: 0;
+    color: #000000;
+}
+
+#no_show {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.policy-content p span {
+    display: block;
+    margin-top: 12px;
+}
+
+/* 객실 상세 — 700(이미지) + 40(간격) + 560(달력) + 좌우 padding 80 = 1380px.
+   컨테이너 자체를 실제 필요한 폭에 맞게 잡아서, 더 이상 margin으로
+   억지로 겹쳐 보이게 하는 방식(-85px 트릭)이 필요 없게 함 */
+.room-detail {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.room-detail-title {
+    font-family: 'KOROADL';
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.room-detail-content {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* 컨테이너(.room-detail)가 이제 실제 필요한 폭(1380px)을 가지고 있어서,
+   700:560 비율의 flex-basis + flex-shrink로 "공간이 부족할 때만,
+   부족한 만큼만" 자연스럽게 같이 줄어듦. 뷰포트 기준 vw 계산이 아니라
+   실제 컨테이너 폭을 기준으로 동작해서 어떤 상황에서도 잘리지 않음 */
+.room-detail-left {
+    flex: 700 1 0;
+    max-width: 700px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.room-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-main-img-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    flex: 1;
+}
+
+.room-thumb-list {
+    display: flex;
+    gap: 14px;
+}
+
+.room-thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.room-desc, .room-desc-eng {
+    font-family: 'KOROADL';
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+}
+
+.room-detail-right {
+    flex: 560 1 0;
+    max-width: 560px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.room-img-slider {
+    display: flex;
+    height: 100%;
+    user-select: none;
+    transition: transform 300ms ease-out;
+}
+
+.room-img-slide {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.room-desc {
+    margin-top: 30px;
+}
+
+.room-desc-eng {
+    margin-top: -5px;
+}
+
+/* 달력 전체 — 부모(room-detail-right)가 이미 min()으로 폭을 관리하므로
+   여기서는 그 폭을 100% 그대로 따라감 */
+.calendar-wrap {
+    width: 100%;
+    height: auto;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* readonly 달력의 입실/퇴실 요약 박스 (기본적으로는 숨김, 모바일에서만 노출) */
+.calendar-readonly-summary {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 달력 헤더 — justify-content:center가 가운데 정렬을 담당하므로
+   폭에 안 맞는 고정 188px 패딩 대신 여유 공간만 확보 */
+.calendar-header {
+    width: 100%;
+    height: 70px;
+    padding: 16px 20px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #D8D8D8;
+    box-sizing: border-box;
+}
+
+reservation-calendar[readonly] .cal-cell:not(.disabled):not(.reserved) {
+    cursor: default;
+    color: inherit;
+}
+
+reservation-calendar[readonly] .cal-cell:hover {
+    background-color: transparent;
+}
+
+reservation-calendar[datesonly] .cal-cell {
+    cursor: default;
+}
+
+reservation-calendar[datesonly] .cal-cell:not(.selected):not(.in-range):hover {
+    background-color: transparent;
+}
+
+
+.cal-prev, .cal-next {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000000;
+    padding: 0;
+    line-height: 1;
+    transform: scaleX(0.75);
+    display: inline-block;
+}
+
+.cal-prev {
+    margin-right: 20px;
+}
+
+.cal-next {
+    margin-left: 20px;
+}
+
+.cal-title {
+    font-family: 'KOROADM';
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* 요일 헤더 */
+.calendar-grid {
+    width: 100%;
+    height: 44px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    align-items: center;
+    border-bottom: none;
+}
+
+.cal-day-header {
+    font-family: 'KOROADL';
+    font-size: 15px;
+    color: #000000;
+}
+
+.cal-day-header:first-child {
+    color: #FF0000;
+}
+
+/* 날짜 본체 (항상 6줄 고정) — 원본 비율(560:360) 유지하며 폭에 맞춰 줄어듦 */
+.calendar-body {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 560 / 360;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);   /* 6줄 고정 */
+    text-align: center;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.cal-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    cursor: pointer;
+    font-family: 'KOROADL';
+    font-size: 15px;
+}
+
+.cal-cell.empty {
+    pointer-events: none;
+}
+
+.cal-num {
+    display: block;
+}
+
+.cal-label {
+    font-size: 10px;
+    color: #FF0000;
+}
+
+.cal-cell.sunday .cal-num { color: #FF0000; }
+.cal-cell.saturday .cal-num { color: #0000FF; }
+
+.cal-cell.disabled,
+.cal-cell.reserved {
+    pointer-events: none;
+}
+
+.cal-cell.disabled .cal-num,
+.cal-cell.reserved .cal-num {
+    color: #CCCCCC;
+}
+
+.cal-cell.reserved .cal-label {
+    color: #FF0000;
+}
+
+/* 선택 범위 */
+.cal-cell.selected,
+.cal-cell.in-range {
+    background-color: #255F38;
+}
+
+.cal-cell.selected .cal-num,
+.cal-cell.in-range .cal-num {
+    color: #FFFFFF;
+}
+
+/* 추가 인원 */
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.info-label {
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    min-width: 70px;
+}
+
+.extra-guest-select {
+    width: 83px;
+    height: 30px;
+    border: 0.5px solid #D8D8D8;
+    padding: 3px 5px 3px 15px;
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    appearance: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23333'/%3E%3C/svg%3E") no-repeat right 8px center;
+    cursor: pointer;
+}
+
+.info-desc {
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #555555;
+}
+
+/* 총 합계 */
+.info-row.total {
+    border-bottom: none;
+    justify-content: space-between;
+    padding: 30px 20px 10px 20px;
+}
+
+.total-right {
+    display: flex;
+    margin-left: auto;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.info-total {
+    font-family: 'KOROADM';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+}
+
+.total-unit {
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+}
+
+/* 취소/예약하기 버튼 — reservation-info와 같은 폭(100%)에 맞춰
+   버튼 두 개가 항상 균등하게(flex:1) 채움 */
+.reservation-buttons {
+    width: 100%;
+    height: 51px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-cancel {
+    flex: 1;
+    height: 50px;
+    padding: 15px 25px;
+    border: 1px solid #D8D8D8;
+    background: none;
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.btn-reserve {
+    flex: 1;
+    height: 50px;
+    padding: 15px 25px;
+    border: none;
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.btn-reserve.inactive {
+    background-color: #818181;
+}
+
+.btn-reserve.inactive:hover {
+    background-color: #818181;
+}
+
+.btn-reserve.active {
+    background-color: #000000;
+}
+
+.btn-reserve.active:hover {
+    background-color: #818181;
+}
+
+.btn-reserve.confirm {
+    background-color: #1D1D1D;
+    color: #FFFFFF;
+}
+
+.btn-reserve.confirm:hover {
+    background-color: #818181;
+}
+
+/* 이전달/다음달 날짜 */
+.cal-cell.other-month .cal-num {
+    color: #CCCCCC;
+}
+
+/* 입실/퇴실 레이블 */
+.cal-label.white {
+    color: #FFFFFF;
+}
+
+/* 범위 내 날짜 */
+.cal-cell.in-range {
+    background-color: #30BD5E;
+}
+
+.cal-cell.in-range .cal-num {
+    color: #FFFFFF;
+}
+
+/* 선택된 날짜 (입실/퇴실) */
+.cal-cell.selected {
+    background-color: #30BD5E;
+}
+
+.cal-cell.selected .cal-num {
+    color: #FFFFFF;
+}
+
+.reservation-info {
+    width: 100%;
+    border-top: 1px solid #D8D8D8;   /* 추가 인원 위에 줄 추가 */
+}
+
+.custom-select {
+    position: relative;
+    width: 83px;
+    height: 30px;
+    border: 0.5px solid #D8D8D8;
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.custom-select-selected {
+    width: 100%;
+    height: 100%;
+    padding: 3px 5px 3px 15px;
+    display: flex;
+    align-items: center;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23333'/%3E%3C/svg%3E") no-repeat right 8px center;
+}
+
+.custom-select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0.5px solid #D8D8D8;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.custom-select-options.open {
+    display: block;
+}
+
+.custom-select-options li {
+    padding: 6px 15px;
+    cursor: pointer;
+}
+
+.custom-select-options li:hover {
+    background-color: #818181;   /* 예약하기 버튼과 같은 회색 */
+    color: #ffffff;
+}
+
+/* reservation5 */
+.res5-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 75px 0 50px;
+    justify-content: flex-start;
+}
+
+.res5-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+    min-height: 55px;
+    padding: 8px 0;
+}
+
+.res5-label {
+    font-family: 'KOROADL';
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    min-width: 100px;
+    padding-top: 4px;
+}
+
+.res5-readonly {
+    width: 546px;
+    height: 34px;
+    padding: 10px 15px;
+    background-color: #EFEFEF;
+    border: 1px solid #D8D8D8;
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.res5-input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 546px;
+}
+
+.res5-input {
+    width: 100%;
+    height: 34px;
+    padding: 7px 30px 7px 15px;
+    border: 1px solid #D8D8D8;
+    font-family: 'KOROADL';
+    font-size: 14px;
+    font-weight: 300;
+    outline: none;
+}
+
+.res5-input.error {
+    border: 1px solid #FF0000;
+}
+
+.res5-error {
+    font-family: 'KOROADL';
+    font-size: 13px;
+    font-weight: 300;
+    color: #FF0000;
+    margin: 4px 0 0 0;
+}
+
+.res5-total {
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.res5-total .total-right {
+    margin-left: auto;
+}
+
+.res5-total .info-total {
+    font-size: 24px;
+}
+
+.res5-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.res5-buttons .btn-cancel {
+    width: 270px;
+}
+
+.res5-buttons .btn-reserve {
+    width: 270px;
+}
+
+reservation-calendar[readonly] {
+    pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+    .reservation-content{
+        margin: -20px 0;
+    }
+
+    .reservation-content:has(.reservation-guide-wrap) {
+        padding-bottom: 40px;
+    }
+
+    .reservation-guide-wrap {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .table-wrap {
+        margin-top: -20px;
+        width: 100%;
+    }
+
+    .reservation-guide-wrap:has(> cancellation-policy:only-child) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    table.info-table {
+        width: 100% !important;
+        min-width: unset !important;
+        table-layout: auto !important;
+        height: auto !important;
+    }
+
+    table.info-table,
+    table.info-table tbody,
+    table.info-table tbody tr {
+        display: block;
+        width: 100%;
+        min-width: unset;
+    }
+
+    table.info-table td {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: 0 !important;
+    }
+
+    table.info-table tbody tr td:first-child {
+        border-top-left-radius: 2px !important;
+        border-top-right-radius: 2px !important;
+    }
+
+    table.info-table tbody tr td:last-child {
+        border-bottom-left-radius: 2px !important;
+        border-bottom-right-radius: 2px !important;
+    }
+
+    .cancellation-policy {
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    .policy-content p {
+        font-size: 13px;
+        line-height: 1.1;
+    }
+
+    .policy-content p span {
+        margin-top: 8px;
+    }
+
+    .room-list {
+        width: 100%;
+        margin-top: 10px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .room-detail {
+        max-width: 100%;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+
+    .room-detail-title {
+        font-size: 22px;
+        margin-bottom: 24px;
+    }
+
+    .room-detail-content {
+        flex-direction: column;
+        align-items: stretch;
+        margin-left: 0;
+        gap: 24px;
+    }
+
+    .room-detail-left {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .room-main-img-wrap {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .room-thumb-list {
+        display: none;
+    }
+
+    .room-desc {
+        margin-top: 20px;
+    }
+
+    .room-detail-right {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .calendar-wrap {
+        width: 100%;
+        height: auto;
+    }
+
+    .calendar-header {
+        width: 100%;
+        padding: 16px 20px;
+    }
+
+    .calendar-grid {
+        width: 100%;
+    }
+
+    .calendar-body {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 560 / 360;
+        box-sizing: border-box;
+    }
+
+    .reservation-info {
+        width: 100%;
+    }
+
+    .reservation-buttons {
+        width: 100%;
+    }
+
+    .btn-cancel,
+    .btn-reserve {
+        width: 100%;
+        flex: 1;
+    }
+
+    .res5-form {
+        padding: 30px 0;
+    }
+
+    reservation-calendar[readonly] .calendar-wrap {
+        display: none;
+    }
+
+    reservation-calendar[readonly] .calendar-readonly-summary {
+        display: flex;
+    }
+
+    .room-detail-content:has(.res5-form) {
+        gap: 10px;
+    }
+
+    .res5-form {
+        display: contents;
+    }
+
+    .room-detail-content:has(.res5-form) .room-detail-right {
+        display: contents;
+    }
+
+    reservation-calendar[readonly] {
+        display: contents;
+    }
+
+    .res5-form > .res5-row:nth-child(1) { order: 1; } 
+    .res5-form > .res5-row:nth-child(2) { order: 2; } 
+    reservation-calendar[readonly] .calendar-readonly-summary { order: 3; } 
+    .res5-form > .res5-row:nth-child(3) { order: 4; }
+    .res5-form > .res5-row:nth-child(4) { order: 5; }
+    .res5-form > .res5-row:nth-child(5) { order: 6; }
+
+    .res5-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .res5-total {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .res5-label {
+        min-width: unset;
+    }
+
+    .res5-readonly,
+    .res5-input-wrap {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: -15px;
+    }
+
+    .res5-buttons {
+        margin-top: 20px;
+        gap: 12px;
+    }
+
+    .res5-buttons .btn-cancel,
+    .res5-buttons .btn-reserve {
+        width: 100%;
+        flex: 1;
+    }
+}
+
+@media (max-width: 540px) {
+    .info-row {
+        flex-wrap: wrap;
+    }
+
+    .info-desc {
+        flex-basis: 100%;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 769px) {
+    .table-wrap:first-of-type {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        cursor: grab;
+        user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .table-wrap:first-of-type:active {
+        cursor: grabbing;
+    }
+
+    .table-wrap:first-of-type::-webkit-scrollbar {
+        display: none;
+        height: 0;
+    }
+
+    table.price-table {
+        width: auto !important;
+        min-width: 700px;
+        font-size: 14px;
+    }
+}
