@@ -1,4 +1,8 @@
-const DB_URL = 'http://localhost:3000';
+/* 로컬(Live Server + 별도 json-server)에서는 절대경로로 3000번 포트를 직접 가리키고,
+   배포 환경(같은 서버가 --static으로 프론트+API를 함께 서빙)에서는 상대경로를 씀 */
+const DB_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? 'http://localhost:3000'
+    : '..';
 const urlParams = new URLSearchParams(location.search);
 const idx = parseInt(urlParams.get('idx'));
 
