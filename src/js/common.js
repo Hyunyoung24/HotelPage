@@ -1,9 +1,14 @@
 class PageHeader extends HTMLElement {
     connectedCallback() {
+        /* 도메인 루트가 아니라 서브경로(예: /g/kopo07/hotelpage/)에 배포되어도
+           깨지지 않도록, 절대경로("/...") 대신 현재 페이지 위치 기준 상대경로를 계산 */
+        const inHtmlFolder = location.pathname.includes('/html/');
+        const rootPrefix = inHtmlFolder ? '../' : '';
+
         this.innerHTML = `
         <header>
             <div class="title">
-                <a href="/index.html">H</a>
+                <a href="${rootPrefix}index.html">H</a>
             </div>
             <nav class="navbar" id="navbar">
                 <ul class="menu">
@@ -25,8 +30,8 @@ class PageHeader extends HTMLElement {
                     <li>
                         <a href="#">RESERVATION</a>
                         <ul class="sub">
-                            <li><a href="/html/reservation1.html">예약안내</a></li>
-                            <li><a href="/html/reservation2.html">실시간예약</a></li>
+                            <li><a href="${rootPrefix}html/reservation1.html">예약안내</a></li>
+                            <li><a href="${rootPrefix}html/reservation2.html">실시간예약</a></li>
                         </ul>
                     </li>
                     <li>

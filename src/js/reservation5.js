@@ -122,7 +122,7 @@ document.getElementById('reserveBtn').addEventListener('click', async () => {
             document.getElementById('alertModal')
                 .querySelector('#alertCloseBtn')
                 .addEventListener('click', () => {
-                    location.href = '/index.html';
+                    location.href = '../index.html';
                 }, { once: true });
         } else {
             document.getElementById('alertModal').show('예약에 실패했습니다. 다시 시도해주세요.');
