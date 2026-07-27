@@ -7,7 +7,7 @@ function initRoomImgSlider() {
 
     images.forEach((name) => {
         const img = document.createElement('img');
-        img.src = `${name}.jpg`;
+        img.src = `../img/${name}.jpg`;
         img.className = 'room-img-slide';
         slider.appendChild(img);
     });
@@ -21,7 +21,7 @@ function initRoomImgSlider() {
 
     images.forEach((name, i) => {
         const thumb = document.createElement('img');
-        thumb.src = `${name}.jpg`;
+        thumb.src = `../img/${name}.jpg`;
         thumb.alt = `썸네일 ${i + 1}`;
         thumb.className = 'room-thumb';
         if (i === 0) thumb.classList.add('active');

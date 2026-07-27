@@ -2,7 +2,7 @@
    배포 환경에서는 상대경로(같은 폴더)를 씀 */
 const DB_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
     ? 'http://localhost:3000'
-    : '.';
+    : '..';
 const urlParams = new URLSearchParams(location.search);
 const idx = parseInt(urlParams.get('idx'));
 const checkin = urlParams.get('checkin');
@@ -126,7 +126,7 @@ document.getElementById('reserveBtn').addEventListener('click', async () => {
             document.getElementById('alertModal')
                 .querySelector('#alertCloseBtn')
                 .addEventListener('click', () => {
-                    location.href = 'index.html';
+                    location.href = '../index.html';
                 }, { once: true });
         } else {
             document.getElementById('alertModal').show('예약에 실패했습니다. 다시 시도해주세요.');

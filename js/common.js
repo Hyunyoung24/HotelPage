@@ -1,10 +1,14 @@
 class PageHeader extends HTMLElement {
     connectedCallback() {
-        /* 모든 페이지가 같은 폴더에 있어서 경로 접두사 없이 파일명만으로 바로 이동 가능 */
+        /* index.html(루트)과 reservation*.html(html/ 폴더)이 서로 다른 깊이에 있어서,
+           현재 페이지 위치 기준으로 상대경로 접두사를 계산 */
+        const inHtmlFolder = location.pathname.includes('/html/');
+        const rootPrefix = inHtmlFolder ? '../' : '';
+
         this.innerHTML = `
         <header>
             <div class="title">
-                <a href="index.html">H</a>
+                <a href="${rootPrefix}index.html">H</a>
             </div>
             <nav class="navbar" id="navbar">
                 <ul class="menu">
@@ -26,8 +30,8 @@ class PageHeader extends HTMLElement {
                     <li>
                         <a href="#">RESERVATION</a>
                         <ul class="sub">
-                            <li><a href="reservation1.html">예약안내</a></li>
-                            <li><a href="reservation2.html">실시간예약</a></li>
+                            <li><a href="${rootPrefix}html/reservation1.html">예약안내</a></li>
+                            <li><a href="${rootPrefix}html/reservation2.html">실시간예약</a></li>
                         </ul>
                     </li>
                     <li>

@@ -2,7 +2,7 @@
    배포 환경에서는 상대경로(같은 폴더)를 씀 */
 const DB_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
     ? 'http://localhost:3000'
-    : '.';
+    : '..';
 const urlParams = new URLSearchParams(location.search);
 const idx = parseInt(urlParams.get('idx'));
 
